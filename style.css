@@ -1,0 +1,991 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+        scroll-behavior: smooth;
+        }
+
+        body {
+        overflow: scroll;
+        font-family: 'Arial', sans-serif;
+        background-color: #ffffff;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 50px;
+            background-color: transparent;
+
+            animation: changeHeaderBg linear forwards;
+            animation-timeline: scroll();
+            animation-range: 0 100px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+        nav a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            color: #ffffff;
+            padding: 10px 20px;
+            display: block;
+
+            animation: changeTextColor linear forwards;
+            animation-timeline: scroll();
+            animation-range: 0px 100px;
+        }
+        a:hover {
+            color: #2D82B5 !important;
+            transition: color 0.3s ease;
+        }
+        @keyframes changeHeaderBg {
+         to {
+            background-color: #ffffff; /* Thành nền trắng */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Thêm bóng đổ */
+         }
+        }
+        @keyframes changeTextColor {
+        to {
+        color: #000000; /* Thành chữ đen */
+         }
+        }
+        .logo img {
+        max-height: 150px;
+        width: auto;
+        }
+
+/* CONTENT 1 */
+    .hero-section {
+    background-image: url('image/nhahang.jpg'); /* Thiết lập hình nền */
+    background-attachment: fixed;   /* Giữ hình nền đứng yên khi cuộn */
+    
+    /* Căn chỉnh hình nền luôn đẹp */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 100vh;    /* Chiều cao của section (thường là toàn màn hình) */
+    position: relative;     /* Tạo lớp phủ tối (Overlay) để chữ dễ đọc hơn */
+    }
+
+    /* Lớp phủ màu tối */
+    .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+   
+    /* background: rgba(0, 0, 0, 0.5);  Màu đen trong suốt 50% */
+    }
+
+    /* Đưa nội dung lên trên lớp phủ */
+    .hero-content {
+    position: relative;
+    z-index: 50;
+    color: #ffffff;
+    padding: 100px;
+    display: inline-block;
+    margin-top: 300px;
+    max-width: 600px;
+    }
+    .subtitle {
+    color: #16a085;       /* Màu xanh ngọc */
+    font-weight: bold;
+    letter-spacing: 2px;  /* Khoảng cách giữa các chữ cái */
+    margin-bottom: 15px;
+    }
+    .description {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    }
+    .btn-order {
+    display: inline-block;
+    background-color: #16a085; /* Nền xanh ngọc */
+    color: #ffffff;            /* Chữ trắng */
+    text-decoration: none;     /* Bỏ gạch chân */
+    padding: 12px 30px;        /* Độ phình của nút */
+    border-radius: 25px;       /* Bo tròn góc nút */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    }
+
+    .btn-order:hover {
+    background-color: #12876f; /* Nút đậm màu hơn khi đưa chuột vào */
+    }
+
+/* CONTENT 2 */
+    .content2 {
+        padding: 50px 0px;
+        display: flex;
+        align-items: center;
+    }
+    .content21 {
+        display: flex;
+        gap: 50px;
+        background-color: #f4f5f7;
+        padding: 50px 80px;
+    }
+    .content2-text {
+        flex: 1;
+        padding: 20px;
+    }
+    .content2-image {
+        flex: 1;
+        padding: 20px;
+    }
+    .content2-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    .sub2 {
+        color: #16a085;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+    .des2 {
+        color: #333333;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .des3 {
+        color: #333333;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-top: 20px;
+    }
+
+/* CONTENT 3 */
+
+    /* =========================================
+   1. Tổng thể khu vực Services (Nền tối)
+   ========================================= */
+    .services-section {
+    padding: 50px 0;
+    text-align: center;
+
+    /* position: relative; */
+    /* Thay đường dẫn này bằng link ảnh nhà hàng của bạn */
+    background-image: url('image/sea-ocean-sunlight-wave-underwater-reflection-41450-pxhere.com.jpg'); 
+    background-size: cover;       /* Phóng to ảnh lấp đầy khung */
+    background-position: center;  /* Căn giữa ảnh */
+    
+    /* --- PHÉP THUẬT PARALLAX NẰM Ở ĐÂY --- */
+    background-attachment: fixed; /* Giữ ảnh đứng yên khi người dùng cuộn chuột */
+    
+    /* padding: 100px 20px; */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    }
+
+    .section-title {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    z-index: 1000;
+    }
+
+    .service-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25); /* Nền đen có độ trong suốt 75% */
+    z-index: 1;
+    }
+
+    /* =========================================
+    2. Vùng chứa cuộn ngang (Phép thuật nằm ở đây)
+    ========================================= */
+    .services-wrapper {
+    display: flex;
+    gap: 30px;               /* Khoảng cách giữa các thẻ */
+    padding: 0 90px;         /* Lề hai bên để thẻ đầu tiên không dính sát mép */
+    overflow-x: auto;        /* Bật tính năng cuộn ngang */
+    scroll-behavior: smooth; /* Cuộn mượt mà hơn */
+    z-index: 1001;
+    }
+
+    /* Ẩn thanh cuộn trên Chrome, Safari, Opera */
+    .services-wrapper::-webkit-scrollbar {
+    display: none; 
+    }
+
+    /* =========================================
+    3. Định dạng từng Thẻ Dịch vụ (Card)
+    ========================================= */
+    .service-card {
+    /* flex: [phóng to] [thu nhỏ] [chiều rộng cố định] */
+    flex: 0 0 350px; /* Ép mỗi thẻ phải rộng đúng 350px, không được co lại */
+    text-align: center;
+    }
+
+    .service-card img {
+    width: 100%;         /* Ảnh rộng bằng thẻ chứa nó */
+    height: 350px;       /* Chiều cao cố định cho mọi ảnh */
+    object-fit: cover;   /* Giúp ảnh không bị méo khi bị ép kích thước */
+    border-radius: 15px; /* Bo tròn các góc ảnh như trong video */
+    margin-bottom: 20px;
+    }
+
+    .card-title {
+    color: #96d6ff;      /* Chữ tiêu đề màu xanh ngọc */
+    font-size: 22px;
+    margin-bottom: 15px;
+    }
+
+    .card-desc {
+    color: #f4f5f7;      /* Chữ mô tả màu xám nhạt để dễ đọc trên nền tối */
+    font-size: 15px;
+    line-height: 1.6;
+    }
+
+
+
+
+/* CONTENT 4 */
+
+    /* =========================================
+   1. Bố cục tổng thể của khu vực Menu
+   ========================================= */
+.menu-section {
+  background-color: #f4f5f7; /* Màu nền xám nhạt giống trong ảnh */
+  font-family: 'Arial', sans-serif;
+  padding: 80px 20px;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 36px;
+  color: #222222;
+  margin-bottom: 60px;
+}
+
+/* Sử dụng Grid để chia 3 cột */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tạo 3 cột có độ rộng bằng nhau (1 fraction) */
+  gap: 40px;           /* Khoảng cách giữa các cột và các hàng */
+  max-width: 1200px;   /* Giới hạn chiều rộng tối đa cho đẹp */
+  margin: 0 auto;      /* Căn giữa toàn bộ lưới menu trên màn hình */
+}
+
+/* =========================================
+   2. Định dạng từng món ăn (Menu Item)
+   ========================================= */
+.menu-item {
+  display: flex;       /* Đặt ảnh và nội dung nằm ngang hàng nhau */
+  align-items: flex-start; /* Căn chỉnh chúng theo mép trên cùng */
+  gap: 15px;           /* Khoảng cách giữa ảnh và chữ */
+}
+
+.menu-img {
+  width: 80px;         /* Chiều rộng ảnh */
+  height: 80px;        /* Chiều cao ảnh (bằng chiều rộng để tạo hình vuông) */
+  border-radius: 50%;  /* Bo tròn 50% để biến hình vuông thành hình tròn */
+  object-fit: cover;   /* Đảm bảo ảnh không bị méo khi cắt tròn */
+  flex-shrink: 0;      /* Ngăn không cho ảnh bị bóp méo khi đoạn text quá dài */
+}
+
+.menu-content {
+  flex-grow: 1;        /* Cho phép phần nội dung chữ chiếm hết không gian còn lại */
+}
+
+/* =========================================
+   3. Định dạng Tên món, Đường kẻ và Giá
+   ========================================= */
+.menu-header {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc cho tên, đường kẻ và giá */
+  margin-bottom: 8px;  /* Cách phần mô tả bên dưới một chút */
+}
+
+.item-name {
+  font-size: 20px;
+  color: #333333;
+  margin: 0;
+  font-weight: 600;
+  white-space: nowrap; /* Giữ tên món ăn trên 1 dòng */
+}
+
+/* Phép thuật tạo đường kẻ ngang co giãn */
+.line {
+  flex-grow: 1;        /* Tự động kéo giãn để lấp đầy khoảng trống giữa Tên và Giá */
+  border-bottom: 1px solid #aaaaaa; /* Tạo đường viền dưới nét đứt/liền tùy ý */
+  margin: 0 15px;      /* Khoảng cách đường kẻ so với chữ ở 2 đầu */
+  position: relative;
+  top: 4px;            /* Dịch chuyển đường kẻ xuống một chút cho cân với chữ */
+}
+
+.item-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #222222;
+}
+
+.item-desc {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+
+
+/* CONTENT 6 */
+/* =========================================
+   1. Bố cục tổng thể của Gallery
+   ========================================= */
+.gallery-section {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 36px;
+  color: #333333;
+  margin-bottom: 40px;
+  text-transform: uppercase; /* Viết hoa toàn bộ chữ */
+  letter-spacing: 2px;
+}
+
+/* Dùng CSS Grid để chia cột */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Tạo 4 cột có chiều rộng bằng nhau */
+  gap: 15px;         /* Khoảng cách giữa các ảnh (bạn có thể tăng/giảm tùy ý) */
+  max-width: 1200px; /* Giới hạn chiều rộng tổng để nhìn đẹp hơn trên màn hình to */
+  margin: 0 auto;    /* Căn giữa toàn bộ lưới ảnh */
+}
+
+/* =========================================
+   2. Thẻ bọc ngoài từng bức ảnh (Khung chứa)
+   ========================================= */
+.gallery-item {
+  position: relative;
+  border-radius: 8px; /* Bo tròn các góc của khung chứa giống trong video */
+  overflow: hidden;   /* QUAN TRỌNG: Cắt bỏ những phần ảnh bị phóng to tràn ra ngoài khung */
+  aspect-ratio: 1 / 1; /* Cực kỳ hữu ích: Ép khung hình luôn luôn là hình vuông hoàn hảo (tỷ lệ 1:1) */
+
+  /* Gọi hiệu ứng fadeUp */
+  animation: fadeUp linear both;
+  
+  /* Liên kết animation với việc phần tử xuất hiện trong khung hình (viewport) */
+  animation-timeline: view();
+  
+  /* Điều khiển lúc nào bắt đầu và kết thúc:
+     Bắt đầu khi mép trên của ảnh xuất hiện 5% ở dưới đáy màn hình.
+     Kết thúc hiệu ứng khi ảnh đã đi vào được 25% màn hình. */
+  animation-range: entry 5% cover 25%;
+}
+
+/* =========================================
+   3. Định dạng Bức ảnh và Hiệu ứng Hover
+   ========================================= */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Đảm bảo ảnh lấp đầy khung hình vuông mà không bị méo */
+  
+  /* Cài đặt thời gian và hiệu ứng chuyển động mượt mà */
+  transition: transform 0.4s ease-in-out; 
+}
+
+/* PHÉP THUẬT NẰM Ở ĐÂY: Khi rê chuột vào khung chứa, bức ảnh bên trong sẽ phóng to lên */
+.gallery-item:hover img {
+  transform: scale(1.1); /* Phóng to ảnh lên 110% */
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;                   /* Hoàn toàn trong suốt */
+    transform: translateY(80px);  /* Bị đẩy tụt xuống dưới 80px */
+  }
+  100% {
+    opacity: 1;                   /* Hiện rõ hoàn toàn */
+    transform: translateY(0);     /* Trở về đúng vị trí gốc */
+  }
+}
+
+
+
+
+
+/* CONTENT 7 */
+/* =========================================
+   1. Bố cục tổng thể & Ảnh nền
+   ========================================= */
+.blog-section {
+  position: relative;
+  /* Thay link này bằng ảnh nền quán cafe của bạn */
+  background-image: url('https://www.recipetineats.com/tachyon/2023/12/Seafood-Platter_Sony-5.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Tùy chọn: Tạo hiệu ứng parallax nhẹ khi cuộn */
+  padding: 80px 20px;
+}
+
+/* Lớp màng đen phủ lên ảnh nền để chữ dễ đọc hơn */
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 1;
+}
+
+/* =========================================
+   2. Bố cục Lưới (Grid)
+   ========================================= */
+.blog-grid {
+  position: relative;
+  z-index: 2; /* Đảm bảo nội dung nằm trên lớp màng đen */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Chia 3 cột đều nhau */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   3. Khối Tiêu đề "LATEST BLOG"
+   ========================================= */
+.blog-intro {
+  display: flex;
+  align-items: center;    /* Căn giữa theo chiều dọc */
+  justify-content: center;/* Căn giữa theo chiều ngang */
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Viền mờ */
+}
+
+.intro-title {
+  font-size: 40px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 2px;
+}
+
+.text-green { color: #16a085; font-weight: bold; }
+.text-white { color: #ffffff; }
+
+/* =========================================
+   4. Khối Bài viết (Card) & Trạng thái Mặc định
+   ========================================= */
+.blog-card {
+  display: flex;
+  flex-direction: column; /* Xếp chữ từ trên xuống dưới */
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.4); /* Nền đen hơi trong suốt */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  
+  /* Khai báo hiệu ứng chuyển động mượt mà trong 0.4 giây */
+  transition: all 0.4s ease; 
+}
+
+.blog-date {
+  font-size: 13px;
+  color: #cccccc;
+  margin-bottom: 20px;
+  transition: color 0.4s ease;
+}
+
+.blog-title {
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  transition: color 0.4s ease;
+}
+
+.blog-excerpt {
+  font-size: 14px;
+  color: #aaaaaa;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  flex-grow: 1; /* Đẩy danh mục "ALL ABOUT COFFEE" xuống sát đáy thẻ */
+  transition: color 0.4s ease;
+}
+
+.blog-category {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.4s ease;
+}
+
+/* =========================================
+   5. HIỆU ỨNG ĐẢO MÀU KHI HOVER
+   ========================================= */
+/* Đổi nền thẻ thành trắng */
+.blog-card:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+/* Đổi màu từng dòng chữ bên trong thành màu tối */
+.blog-card:hover .blog-date { color: #666666; }
+.blog-card:hover .blog-title { color: #000000; }
+.blog-card:hover .blog-excerpt { color: #333333; }
+.blog-card:hover .blog-category { color: #000000; }
+
+
+
+
+/* CONTENT 8 */
+
+/* =========================================
+   1. Bố cục Tổng thể & Tiêu đề
+   ========================================= */
+.reviews-section {
+  background-color: #f7f8f9; /* Nền xám nhạt để làm nổi bật các thẻ trắng */
+  padding: 80px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 36px;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+/* Đường gạch ngang nhỏ dưới chữ Reviews */
+.underline {
+  width: 60px;
+  height: 2px;
+  background-color: #cccccc;
+  margin: 0 auto; /* Căn giữa đường gạch */
+}
+
+/* =========================================
+   2. Bố cục Lưới 3 cột
+   ========================================= */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+  gap: 30px;         /* Khoảng cách giữa các thẻ */
+  max-width: 1200px; /* Giới hạn chiều rộng để không bị dàn quá to trên màn hình rộng */
+  margin: 0 auto;    /* Căn giữa toàn bộ lưới */
+}
+
+/* =========================================
+   3. Định dạng Thẻ Đánh giá (Card)
+   ========================================= */
+.review-card {
+  background-color: #ffffff;
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: 6px; /* Bo góc nhẹ */
+  
+  /* Phép thuật nằm ở đây: Tạo hiệu ứng bóng đổ nổi lên trên nền */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+  
+  /* Hiệu ứng mượt mà nếu bạn muốn làm nó nhô lên khi đưa chuột vào */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Tùy chọn: Nhô thẻ lên một chút khi hover */
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   4. Định dạng Nội dung bên trong
+   ========================================= */
+.reviewer-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%; /* Cắt ảnh thành hình tròn */
+  object-fit: cover;
+  margin-bottom: 25px;
+}
+
+.review-title {
+  color: #16a085; /* Màu xanh ngọc */
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.stars {
+  color: #f1c40f; /* Màu vàng sao */
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.review-text {
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.reviewer-name {
+  color: #16a085;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+
+
+/* CONTENT 9 */
+/* =========================================
+/* =========================================
+   1. Bố cục tổng thể & Hiệu ứng Parallax
+   ========================================= */
+.chefs-section {
+  position: relative;
+  /* Bạn thay link ảnh nền nhà hàng của bạn vào đây nhé */
+  background-image: url('https://img.sndimg.com/food/image/upload/q_92,fl_progressive/v1/img/recipes/54/18/00/WIPhkJ9PSmZrOK2zexQS_ShrimpBoil_15.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* PHÉP THUẬT PARALLAX: Giữ ảnh nền đứng im khi cuộn */
+  padding: 80px 0; /* Bỏ padding 2 bên để khối đầu bếp tràn ra rộng hơn */
+  color: #ffffff;
+}
+
+.chefs-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Lớp phủ đen 70% */
+  z-index: 1;
+}
+
+.chefs-container {
+  position: relative;
+  z-index: 2; /* Nổi lên trên lớp phủ */
+  max-width: 1000px; /* Độ rộng của khu vực nội dung */
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+
+/* =========================================
+   2. Bố cục Zig-zag cho từng hàng
+   ========================================= */
+.chef-row {
+  display: flex;
+  align-items: center; /* Căn giữa chữ và ảnh theo chiều dọc */
+}
+
+/* PHÉP THUẬT ZIG-ZAG: Chọn các hàng số chẵn (2, 4, 6...) và lật ngược trục ngang */
+.chef-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* =========================================
+   3. Định dạng Phần Chữ
+   ========================================= */
+.chef-text {
+  flex: 1; /* Chiếm 50% không gian */
+  padding: 40px;
+  text-align: center;
+}
+
+.chef-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chef-title {
+  font-size: 18px;
+  color: #16a085; /* Màu xanh ngọc */
+  margin-bottom: 20px;
+}
+
+.chef-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #dddddd;
+}
+
+/* =========================================
+   4. Định dạng Phần Ảnh
+   ========================================= */
+.chef-img {
+  flex: 1; /* Chiếm 50% không gian */
+}
+
+.chef-img img {
+  width: 100%;
+  height: 400px;     /* Ép mọi ảnh có chung một chiều cao cho đồng đều */
+  object-fit: cover; /* Cắt cúp ảnh cho vừa vặn mà không bị méo */
+  display: block;    /* Loại bỏ khoảng trắng thừa mặc định dưới chân ảnh */
+}
+
+
+
+
+
+/* CONTENT 10 */
+/* =========================================
+   1. Bố cục Tổng thể & Tiêu đề
+   ========================================= */
+.contact-section {
+  background-color: #000000; /* Nền đen tuyền */
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa form trên màn hình */
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-title {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+/* =========================================
+   2. Bố cục Hai Cột của Form
+   ========================================= */
+.contact-form {
+  display: flex;
+  gap: 30px;         /* Khoảng cách giữa 2 cột là 30px */
+  width: 100%;
+  max-width: 900px;  /* Giới hạn độ rộng tối đa để form không bị bẹp ngang */
+}
+
+.form-column {
+  flex: 1;           /* Chia đều mỗi cột chiếm 50% không gian */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;         /* Khoảng cách giữa các ô nhập liệu theo chiều dọc */
+}
+
+/* =========================================
+   3. Định dạng Ô Nhập Liệu (Input & Textarea)
+   ========================================= */
+.form-control {
+  width: 100%;
+  height: 55px;      /* Cố định chiều cao các ô input là 55px */
+  padding: 15px 20px;
+  border-radius: 5px; /* Bo góc nhẹ */
+  border: none;      /* Xóa viền mặc định */
+  outline: none;     /* Xóa viền xanh khi click vào */
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.form-control::placeholder {
+  color: #666666; /* Màu chữ mờ cho placeholder */
+}
+
+/* Khung tin nhắn (Textarea) cần cao bằng 2 ô input bên trái cộng với khoảng cách gap */
+/* Toán học: 55px (input 1) + 20px (gap) + 55px (input 2) = 130px */
+.textarea-control {
+  height: 130px; 
+  resize: vertical; /* Chỉ cho phép người dùng kéo giãn chiều dọc, không kéo ngang làm vỡ form */
+}
+
+/* =========================================
+   4. Định dạng Nút Gửi (Submit Button)
+   ========================================= */
+.btn-submit {
+  height: 55px; /* Cao bằng đúng ô Subject bên trái để thẳng hàng */
+  background-color: #00bfa5; /* Màu xanh ngọc giống trong ảnh */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px; /* Bo tròn mạnh tạo hình viên thuốc */
+  padding: 0 40px;     /* Độ dài của nút */
+  cursor: pointer;
+  width: fit-content;  /* Nút chỉ dài bằng nội dung bên trong, không kéo dài hết cột */
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #009688; /* Nút đậm màu hơn khi đưa chuột vào */
+}
+
+
+
+
+/* CONTENT 11 */
+/* =========================================
+   1. Khối nền tổng thể & Hiệu ứng Parallax
+   ========================================= */
+.info-section {
+  position: relative;
+  /* Thay đường dẫn này bằng link ảnh nhà hàng của bạn */
+  background-image: url('image/anhbiencohaidang1.jpg'); 
+  background-size: cover;       /* Phóng to ảnh lấp đầy khung */
+  background-position: center;  /* Căn giữa ảnh */
+  
+  /* --- PHÉP THUẬT PARALLAX NẰM Ở ĐÂY --- */
+  background-attachment: fixed; /* Giữ ảnh đứng yên khi người dùng cuộn chuột */
+  
+  padding: 100px 20px;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+/* =========================================
+   2. Lớp phủ mờ (Overlay)
+   ========================================= */
+.info-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Nền đen có độ trong suốt 75% */
+  z-index: 1;
+}
+
+/* =========================================
+   3. Bố cục Flexbox 3 cột
+   ========================================= */
+.info-container {
+  position: relative;
+  z-index: 2; /* Đảm bảo nội dung nổi lên trên lớp overlay đen */
+  max-width: 1200px; /* Giới hạn chiều rộng để không bị dàn quá xa */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Đẩy 3 cột cách đều nhau */
+  gap: 30px;
+}
+
+/* =========================================
+   4. Định dạng chi tiết từng Cột
+   ========================================= */
+.info-item {
+  flex: 1; /* Chiều rộng 3 cột bằng nhau */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Định dạng Icon */
+.info-item i {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Định dạng Tiêu đề (Location, Opening Hour...) */
+.info-item h3 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Định dạng Nội dung chữ */
+.info-item p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dddddd; /* Trắng hơi ngả xám để phân biệt với Tiêu đề */
+  margin: 0;
+}
+
+/* =========================================
+   5. Responsive: Khi xem trên điện thoại
+   ========================================= */
+@media (max-width: 768px) {
+  .info-container {
+    flex-direction: column; /* Chuyển từ xếp ngang sang xếp dọc */
+    gap: 50px; /* Tăng khoảng cách giữa các khối khi xếp dọc */
+  }
+}
+
+
+
+
+
+
+/* FOOTER */
+/* =========================================
+   1. Bố cục tổng thể của thanh ngang
+   ========================================= */
+.bottom-bar {
+  background-color: #226289; /* Nền xanh dương */
+  padding: 20px 50px;        /* Lề trên/dưới 20px, trái/phải 50px */
+  display: flex;
+  justify-content: space-between; /* Đẩy 3 phần tử dạt ra 2 mép và giữa */
+  align-items: center;            /* Căn giữa tất cả theo chiều dọc */
+  font-family: 'Arial', sans-serif;
+}
+
+/* =========================================
+   2. Phần Logo
+   ========================================= */
+.bottom-logo img {
+  max-height: 100px; /* Chiều cao tối đa của logo, bạn có thể chỉnh lại cho vừa mắt */
+  width: auto;
+  display: block;
+}
+
+/* =========================================
+   3. Phần Chữ Copyright
+   ========================================= */
+.bottom-copyright p {
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
+  letter-spacing: 0.5px; /* Khoảng cách giữa các chữ cái rộng ra chút cho sang */
+}
+
+/* =========================================
+   4. Phần Icon Mạng Xã Hội
+   ========================================= */
+.bottom-social {
+  display: flex;
+  gap: 15px; /* Khoảng cách giữa các ô vuông icon */
+}
+
+/* Định dạng từng ô vuông chứa icon */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;          /* Chiều rộng ô vuông */
+  height: 40px;         /* Chiều cao ô vuông */
+  background-color: #00bfa5; /* Màu xanh ngọc giống trong ảnh */
+  color: #ffffff;       /* Màu trắng cho icon */
+  border-radius: 8px;   /* Bo góc hình vuông */
+  text-decoration: none;
+  font-size: 18px;      /* Kích thước icon bên trong */
+  
+  /* Hiệu ứng chuyển động mượt mà khi di chuột */
+  transition: all 0.3s ease; 
+}
+
+/* Hiệu ứng khi đưa chuột vào (Hover) */
+.social-icon:hover {
+  background-color: #009688; /* Màu xanh đậm hơn một chút */
+  transform: translateY(-3px); /* Nẩy nhẹ icon lên trên 3px */
+  box-shadow: 0 4px 10px rgba(0, 191, 165, 0.4); /* Tỏa sáng nhẹ */
+}
