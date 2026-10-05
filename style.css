@@ -609,8 +609,8 @@
   letter-spacing: 2px;
 }
 
-.text-green { color: #16a085; font-weight: bold; }
-.text-white { color: #ffffff; }
+.text-green { color: #16a085; font-weight: bold; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);}
+.text-white { color: #ffffff; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);}
 
 /* =========================================
    4. Khối Bài viết (Card) & Trạng thái Mặc định
@@ -644,7 +644,7 @@
 }
 
 .blog-excerpt {
-  font-size: 14px;
+  font-size: 16px;
   color: #aaaaaa;
   line-height: 1.6;
   margin-bottom: 40px;
@@ -850,15 +850,16 @@
 }
 
 .chef-title {
-  font-size: 18px;
+  font-size: 20px;
   color: #16a085; /* Màu xanh ngọc */
   margin-bottom: 20px;
 }
 
 .chef-desc {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
   color: #dddddd;
+  text-align: justify;
 }
 
 /* =========================================
@@ -884,7 +885,7 @@
    1. Bố cục Tổng thể & Tiêu đề
    ========================================= */
 .contact-section {
-  background-color: #000000; /* Nền đen tuyền */
+  background-color: #18181b; /* Nền đen tuyền */
   padding: 80px 20px;
   display: flex;
   flex-direction: column;
@@ -1057,7 +1058,7 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background-color: #017ba0; /* Màu xanh dương đậm của biển */
+    background-color: #16997f; /* Màu xanh dương đậm của biển */
     color: #ffffff;
     border: none;
     border-radius: 50px;
@@ -1230,6 +1231,9 @@
 .cart-total-box h3 { margin: 0; color: #333; }
 .cart-total-box .total-price { color: #d35400; font-size: 24px; }
 
+#cart-total {
+    color: #000000 !important;
+}
 .checkout-title {
     margin: 0 0 10px 0;
     font-size: 14px;
@@ -1271,6 +1275,54 @@
 }
 
 .checkout-submit-btn:hover { background-color: #219653; }
+
+
+/* --- BONG BÓNG CHAT HỖ TRỢ --- */
+.chat-support-btn {
+    position: fixed;
+    /* Điều chỉnh số này cao hơn nút giỏ hàng khoảng 60px - 70px */
+    bottom: 90px; 
+    right: 30px; /* Căn lề phải bằng đúng với lề phải của nút giỏ hàng */
+    
+    width: 50px;
+    height: 50px;
+    background-color: #16997f; /* Xanh ngọc đồng bộ với Giỏ hàng */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Bo tròn hoàn toàn */
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 998; /* Nằm dưới lớp mờ (overlay) của giỏ hàng nếu mở giỏ */
+
+    border: none !important;
+    
+    /* Hiệu ứng nhịp đập thu hút sự chú ý */
+    animation: pulseChat 2s infinite;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.chat-support-btn:hover {
+    background-color: #117a65;
+    transform: scale(1.1); /* Phóng to nhẹ khi trỏ chuột vào */
+    animation: none; /* Dừng nhịp đập khi đang trỏ chuột */
+}
+
+/* Keyframes cho hiệu ứng nhịp đập (Pulse) */
+@keyframes pulseChat {
+    0% {
+        box-shadow: 0 0 0 0 rgba(22, 153, 127, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(22, 153, 127, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(22, 153, 127, 0);
+    }
+}
 
 
 

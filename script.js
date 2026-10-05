@@ -129,7 +129,7 @@ document.querySelectorAll('.info-toggle').forEach(function(btn) {
             if (desc.classList.contains('show')) {
                 this.innerHTML = 'Thu gọn ▴';
             } else {
-                this.innerHTML = 'Thông tin sản phẩm ▾';
+                this.innerHTML = 'Thông tin món ăn ▾';
             }
         }
     });
