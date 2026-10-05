@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  display: grid;
+  height: 100vh; /* Full chiều cao màn hình */
+  
+  /* Thiết lập cột và hàng */
+  grid-template-columns: 250px 1fr; /* Sidebar 250px, Content chiếm phần còn lại */
+  grid-template-rows: 80px 1fr 60px; /* Chiều cao Header, Body, Footer */
+  
+  /* Định nghĩa khu vực */
+  grid-template-areas: 
+    "header header"
+    "sidebar content"
+    "footer footer";
+    
+  gap: 10px; /* Khoảng cách giữa các khối */
+}
+
+/* Gán các phần tử vào khu vực tương ứng */
+.header  { grid-area: header; background: #3498db; }
+.sidebar { grid-area: sidebar; background: #2ecc71; }
+.content { grid-area: content; background: #ecf0f1; }
+.footer  { grid-area: footer; background: #34495e; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+  <header class="header">Header</header>
+  <aside class="sidebar">Sidebar</aside>
+  <main class="content">Main Content</main>
+  <footer class="footer">Footer</footer>
+</div>
+</body>
+</html>

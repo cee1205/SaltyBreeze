@@ -5,6 +5,7 @@
         }
         html {
         scroll-behavior: smooth;
+        scroll-padding-top: 100px;
         }
 
         body {
@@ -22,7 +23,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 50px;
-            background-color: transparent;
+            background-color: rgb(240, 248, 255);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 
             animation: changeHeaderBg linear forwards;
             animation-timeline: scroll();
@@ -39,7 +41,7 @@
             font-size: 15px;
             letter-spacing: 0.5px;
             transition: color 0.3s ease;
-            color: #ffffff;
+            color: #000000;
             padding: 10px 20px;
             display: block;
 
@@ -47,48 +49,51 @@
             animation-timeline: scroll();
             animation-range: 0px 100px;
         }
-        a:hover {
-            color: #2D82B5 !important;
+        nav a:hover {
+            color: #16997f !important;
             transition: color 0.3s ease;
         }
         @keyframes changeHeaderBg {
          to {
-            background-color: #ffffff; /* Thành nền trắng */
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); /* Thêm bóng đổ */
+            background-color: rgb(240, 248, 255, 0.8);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(30px);
          }
         }
         @keyframes changeTextColor {
         to {
-        color: #000000; /* Thành chữ đen */
+        color: #000000; 
          }
         }
         .logo img {
-        max-height: 150px;
+        max-height: 100px;
         width: auto;
         }
 
 /* CONTENT 1 */
     .hero-section {
-    background-image: url('image/nhahang.jpg'); /* Thiết lập hình nền */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('image/cold-seafood-platter-90608-2.jpeg'); /* Thiết lập hình nền */
     background-attachment: fixed;   /* Giữ hình nền đứng yên khi cuộn */
     
     /* Căn chỉnh hình nền luôn đẹp */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    /* overflow: hidden; */
 
     height: 100vh;    /* Chiều cao của section (thường là toàn màn hình) */
     position: relative;     /* Tạo lớp phủ tối (Overlay) để chữ dễ đọc hơn */
     }
 
     /* Lớp phủ màu tối */
-    .hero-section::before {
+    /* .hero-section::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
    
-    /* background: rgba(0, 0, 0, 0.5);  Màu đen trong suốt 50% */
-    }
+    background: rgba(0, 0, 0, 0.1);   */
+    /* Màu đen trong suốt 50% */
+    /* } */
 
     /* Đưa nội dung lên trên lớp phủ */
     .hero-content {
@@ -97,25 +102,36 @@
     color: #ffffff;
     padding: 100px;
     display: inline-block;
-    margin-top: 300px;
-    max-width: 600px;
+    margin-top: 180px;
+    max-width: 800px;
+    }
+    span {
+    color: #e6e6d5; /* Màu xanh ngọc */
     }
     .subtitle {
-    color: #16a085;       /* Màu xanh ngọc */
+    font-family: 'Montserrat', sans-serif;
+    max-width: 800px;
+    color: #28bda0;       /* Màu xanh ngọc */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 60px;
     font-weight: bold;
     letter-spacing: 2px;  /* Khoảng cách giữa các chữ cái */
     margin-bottom: 15px;
     }
     .description {
-    color: #ffffff;
+    color: #e6e6d5;  /* Màu trắng nhạt */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    max-width: 550px; /* Giới hạn chiều rộng để chữ không quá dài */
     }
     .btn-order {
+    font-size: 20px;
     display: inline-block;
     background-color: #16a085; /* Nền xanh ngọc */
-    color: #ffffff;            /* Chữ trắng */
+    color: #ffffef;            /* Chữ trắng */
     text-decoration: none;     /* Bỏ gạch chân */
     padding: 12px 30px;        /* Độ phình của nút */
     border-radius: 25px;       /* Bo tròn góc nút */
@@ -125,6 +141,7 @@
 
     .btn-order:hover {
     background-color: #12876f; /* Nút đậm màu hơn khi đưa chuột vào */
+    color: #ffffff;
     }
 
 /* CONTENT 2 */
@@ -157,15 +174,16 @@
         font-weight: bold;
         letter-spacing: 2px;
         margin-bottom: 15px;
+        font-size: 30px;
     }
     .des2 {
         color: #333333;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 1.6;
     }
     .des3 {
         color: #333333;
-        font-size: 16px;
+        font-size: 20px;
         line-height: 1.6;
         margin-top: 20px;
     }
@@ -181,7 +199,7 @@
 
     /* position: relative; */
     /* Thay đường dẫn này bằng link ảnh nhà hàng của bạn */
-    background-image: url('image/sea-ocean-sunlight-wave-underwater-reflection-41450-pxhere.com.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image/sea-ocean-sunlight-wave-underwater-reflection-41450-pxhere.com.jpg'); 
     background-size: cover;       /* Phóng to ảnh lấp đầy khung */
     background-position: center;  /* Căn giữa ảnh */
     
@@ -208,21 +226,15 @@
     z-index: 1;
     }
 
-    /* =========================================
-    2. Vùng chứa cuộn ngang (Phép thuật nằm ở đây)
-    ========================================= */
     .services-wrapper {
     display: flex;
     gap: 30px;               /* Khoảng cách giữa các thẻ */
-    padding: 0 90px;         /* Lề hai bên để thẻ đầu tiên không dính sát mép */
-    overflow-x: auto;        /* Bật tính năng cuộn ngang */
-    scroll-behavior: smooth; /* Cuộn mượt mà hơn */
+    padding: 0 20px;         /* Lề hai bên để thẻ đầu tiên không dính sát mép */
+    justify-content: center;
     z-index: 1001;
-    }
-
-    /* Ẩn thanh cuộn trên Chrome, Safari, Opera */
-    .services-wrapper::-webkit-scrollbar {
-    display: none; 
+    margin: 0 auto;
+    /* position: relative; */
+    max-width: 1400px;
     }
 
     /* =========================================
@@ -230,13 +242,15 @@
     ========================================= */
     .service-card {
     /* flex: [phóng to] [thu nhỏ] [chiều rộng cố định] */
-    flex: 0 0 350px; /* Ép mỗi thẻ phải rộng đúng 350px, không được co lại */
+    flex: 1 1 0;       
+    /* 2. Đặt chiều rộng tối thiểu và tối đa để giữ form thẻ */
+    min-width: 200px; /* Tránh thẻ bị bóp quá nhỏ trên màn hình hẹp */
     text-align: center;
     }
 
     .service-card img {
     width: 100%;         /* Ảnh rộng bằng thẻ chứa nó */
-    height: 350px;       /* Chiều cao cố định cho mọi ảnh */
+    height: 300px;       /* Chiều cao cố định cho mọi ảnh */
     object-fit: cover;   /* Giúp ảnh không bị méo khi bị ép kích thước */
     border-radius: 15px; /* Bo tròn các góc ảnh như trong video */
     margin-bottom: 20px;
@@ -250,8 +264,10 @@
 
     .card-desc {
     color: #f4f5f7;      /* Chữ mô tả màu xám nhạt để dễ đọc trên nền tối */
-    font-size: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    font-size: 17px;
     line-height: 1.6;
+    text-align: justify;
     }
 
 
@@ -344,8 +360,122 @@
   margin: 0;
 }
 
+/* --- 4. HUY HIỆU BEST SELLER --- */
+.menu-img-wrapper {
+    position: relative; /* Bắt buộc để căn chỉnh huy hiệu */
+    display: inline-block;
+}
 
+.badge-bestseller {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px;
+    white-space: nowrap;
+    background-color: #ff4757; /* Màu đỏ cam kích thích vị giác */
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 5px rgba(255, 71, 87, 0.4);
+    z-index: 2;
+}
 
+/* --- 5. THÔNG TIN SẢN PHẨM (ẨN/HIỆN) --- */
+.info-toggle {
+    font-size: 15px;
+    color: #16997f; /* Màu chủ đạo của web */
+    cursor: pointer;
+    margin: 5px 0 10px 0;
+    font-weight: 600;
+    transition: color 0.3s;
+    user-select: none; /* Chống bôi đen chữ khi click bừa */
+}
+
+.info-toggle:hover {
+    color: #0b3d60;
+}
+
+.info-desc {
+    display: none; /* Mặc định giấu đi */
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    background-color: #f1f2f6;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #16997f;
+    margin-bottom: 15px;
+    animation: fadeIn 0.3s ease; /* Hiệu ứng mờ dần khi mở */
+}
+
+/* Class này sẽ được JS thêm vào khi click */
+.info-desc.show {
+    display: block; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 6. GIAO DIỆN NÚT "THÊM VÀO GIỎ" MỚI --- */
+.modern-cart-btn {
+    background-color: rgb(22, 153, 127, 0.8); /* Xanh ngọc */
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px; /* Bo tròn dạng viên thuốc */
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(22, 153, 127, 0.3); /* Bóng đổ 3D */
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Khoảng cách giữa icon xe đẩy và chữ */
+}
+
+.modern-cart-btn:hover {
+    background-color: #117a65; /* Đổi màu đậm hơn khi trỏ chuột */
+    transform: translateY(-2px); /* Hiệu ứng nảy nút lên */
+    box-shadow: 0 6px 15px rgba(22, 153, 127, 0.4);
+}
+
+.modern-cart-btn:active {
+    transform: translateY(0); /* Hiệu ứng lún nút khi click */
+}
+
+/* --- 7. KHU VỰC ĐÁNH GIÁ SAO --- */
+.product-rating {
+    display: flex; /* Dùng Flexbox để xếp sao và chữ nằm ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 8px; /* Khoảng cách giữa cụm sao và chữ */
+
+}
+
+.stars {
+    color: #ffc107; /* Màu vàng chuẩn của sao đánh giá (Gold) */
+    font-size: 15px; /* Kích thước sao */
+    letter-spacing: 2px; /* Khoảng cách giữa các ngôi sao */
+    transform: translateY(9px);
+}
+
+.rating-text {
+    font-size: 12px;
+    color: #666; /* Màu chữ xám để không tranh giành sự chú ý với sao */
+    font-weight: 500;
+}
+
+/* Định dạng nhẹ cho đoạn text miêu tả để nó khớp với giao diện */
+.desc-text {
+    margin: 0; /* Xóa margin mặc định của thẻ p */
+    color: #444;
+    padding-bottom: 8px; /* Tạo khoảng trống để kẻ đường viền */
+    border-bottom: 1px dashed #ccc; /* Đường viền gạch ngang phân cách mờ */
+}
 
 /* CONTENT 6 */
 /* =========================================
@@ -921,7 +1051,226 @@
   }
 }
 
+/* GIOHANG */
+/* Nút giỏ hàng trôi nổi */
+.cart-toggle-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #017ba0; /* Màu xanh dương đậm của biển */
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(11, 61, 96, 0.4);
+    transition: all 0.3s ease;
+    z-index: 998;
+}
 
+.cart-toggle-btn:hover {
+    background-color: #082942;
+    transform: translateY(-3px);
+}
+
+/* Lớp mờ background khi mở giỏ hàng */
+.cart-overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.cart-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Modal giỏ hàng trượt từ phải sang (Hiệu ứng animation) */
+.cart-modal {
+    position: fixed;
+    top: 0;
+    right: -450px; /* Ẩn đi mặc định bằng cách kéo ra ngoài màn hình */
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Trượt mượt mà */
+}
+
+/* Class kích hoạt khi mở giỏ hàng */
+.cart-modal.open {
+    right: 0;
+}
+
+/* Header giỏ hàng */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #0b3d60;
+}
+
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-cart-btn:hover {
+    color: #e74c3c;
+}
+
+/* Container chứa các món ăn (Có thanh cuộn mượt) */
+.cart-items-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.cart-items-container::-webkit-scrollbar {
+    width: 6px;
+}
+.cart-items-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+/* Từng Item trong giỏ hàng (Do JS sinh ra) */
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+}
+
+.cart-item img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 15px;
+}
+
+.cart-item-info {
+    flex-grow: 1;
+}
+
+.cart-item-info p.name {
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-item-info p.price {
+    margin: 0;
+    color: #d35400; /* Màu cam nổi bật cho giá */
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #ffebee;
+    color: #e53935;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.remove-btn:hover {
+    background: #e53935;
+    color: #fff;
+}
+
+/* Phần Footer: Tính tiền & Form đặt hàng */
+.cart-footer {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.cart-total-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.cart-total-box h3 { margin: 0; color: #333; }
+.cart-total-box .total-price { color: #d35400; font-size: 24px; }
+
+.checkout-title {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Style cho Form thanh toán */
+.checkout-form input,
+.checkout-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: inherit;
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+    outline: none;
+    border-color: #0b3d60;
+}
+
+.checkout-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #27ae60; /* Xanh lá tạo cảm giác an tâm khi thanh toán */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.checkout-submit-btn:hover { background-color: #219653; }
 
 
 
@@ -931,7 +1280,7 @@
    1. Bố cục tổng thể của thanh ngang
    ========================================= */
 .bottom-bar {
-  background-color: #226289; /* Nền xanh dương */
+  background-color: #FFFFFF; /* Nền xanh dương */
   padding: 20px 50px;        /* Lề trên/dưới 20px, trái/phải 50px */
   display: flex;
   justify-content: space-between; /* Đẩy 3 phần tử dạt ra 2 mép và giữa */
@@ -952,7 +1301,7 @@
    3. Phần Chữ Copyright
    ========================================= */
 .bottom-copyright p {
-  color: #ffffff;
+  color: #333333;
   font-size: 14px;
   margin: 0;
   letter-spacing: 0.5px; /* Khoảng cách giữa các chữ cái rộng ra chút cho sang */
